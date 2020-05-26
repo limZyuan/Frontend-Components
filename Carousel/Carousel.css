@@ -1,0 +1,107 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.slider {
+  position: relative;
+  overflow: hidden;
+  height: 80vh;
+  width: 99.4vw;
+}
+
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.4s ease-in-out;
+}
+.slide.current {
+  opacity: 1;
+}
+.slide .content {
+  position: absolute;
+  bottom: 70px;
+  left: -600px;
+  opacity: 0;
+  width: 600px;
+  background: rgba(255, 255, 255, 0.8);
+  color: #333;
+  padding: 35px;
+  border-radius: 10px;
+}
+.slide .content h1 {
+  margin-bottom: 10px;
+}
+
+.slide.current .content {
+  opacity: 1;
+  transform: translateX(600px);
+  transition: all 0.7s ease-in-out 0.3s;
+}
+
+button#next {
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  border: 2px solid white;
+  background-color: transparent;
+  color: white;
+  cursor: pointer;
+  padding: 13px 15px;
+  border-radius: 50%;
+  outline: none;
+}
+button#prev {
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  border: 2px solid white;
+  background-color: transparent;
+  color: white;
+  cursor: pointer;
+  padding: 13px 15px;
+  border-radius: 50%;
+  outline: none;
+}
+
+button#prev:hover,
+#next:hover {
+  background-color: #fff;
+  color: #333;
+}
+
+@media (max-width: 600px) {
+  .slide .content {
+    bottom: -300px;
+    left: 0;
+    width: 100%;
+  }
+  .slide.current .content {
+    transform: translateY(-300px);
+  }
+}
+
+/* Background Images */
+.slide:first-child {
+  background: url("./img/DSC_0737.edit.jpg") no-repeat center center/cover;
+}
+.slide:nth-child(2) {
+  background: url("./img/DSC_0340.JPG") no-repeat right center/cover;
+}
+.slide:nth-child(3) {
+  background: url("./img/DSC_0976.JPG") no-repeat center center/cover;
+}
+.slide:nth-child(4) {
+  background: url("./img/DSC_0545.JPG") no-repeat center center/cover;
+}
+.slide:nth-child(5) {
+  background: url("./img/DSC_0885.JPG") no-repeat center top/cover;
+}
+.slide:nth-child(6) {
+  background: url("./img/DSC_0974.JPG") no-repeat right center/cover;
+}
