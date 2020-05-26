@@ -1,8 +1,10 @@
 # Fun-Stuff
 
 Some fun front end components
-
-<ins>Credits:</ins>
+<br>
+<br>
+<br>
+<ins>Reference</ins>
 
 Franks laboratory https://www.youtube.com/channel/UCEqc149iR-ALYkGM6TG-7vQ  
 Traversy Media https://www.youtube.com/user/TechGuyWeb  
