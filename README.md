@@ -1,6 +1,6 @@
 # Fun-Stuff
 
-Some fun front end components
+Some fun front end components.
 <br>
 <br>
 <br>
