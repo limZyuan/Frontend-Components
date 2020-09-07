@@ -1,0 +1,524 @@
+.button {
+  cursor: pointer;
+}
+.travelSlate {
+  width: 100%;
+  height: 100%;
+  border: 1px solid #ddd;
+  border-top: none;
+}
+
+.tableToolbarMenu {
+  width: 150px;
+  padding: 10px;
+  box-shadow: 0 3px 3px 0px rgba(0, 0, 0, 0.2);
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  z-index: 70;
+  flex-direction: column;
+}
+
+small {
+  margin-top: 5px;
+}
+blockquote {
+  border-left: 2px solid #ddd;
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 10px;
+  color: #aaa;
+  font-style: italic;
+}
+
+blockquote[dir="rtl"] {
+  border-left: none;
+  padding-left: 0;
+  padding-right: 10px;
+  border-right: 2px solid #ddd;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+td {
+  padding: 10px;
+  border: 1px solid #ddd;
+  transition: border-color 0.2s;
+  vertical-align: top;
+  max-width: 1vw;
+}
+td:first-child,
+th:first-child {
+  padding-left: 10px;
+}
+td:last-child,
+th:last-child {
+  padding-right: 10px;
+}
+
+th {
+  max-width: 1vw;
+  padding: 10px;
+  border: 1px solid #ddd;
+  transition: border-color 0.2s;
+  background: #eee;
+}
+tbody {
+  border: 1px solid #ddd;
+}
+
+/**
+ * Icons.
+ */
+
+.material-icons {
+  font-size: 18px;
+  vertical-align: text-bottom;
+}
+
+/**
+ * App.
+ */
+.error,
+.tips {
+  max-width: 42em;
+  margin: 0 auto 20px;
+  padding: 20px;
+}
+
+.error {
+  background: #fffae0;
+}
+
+.error .info {
+  background: #fbf1bd;
+  white-space: pre;
+  overflow-x: scroll;
+  margin-bottom: 0;
+}
+
+.editor_container {
+  position: relative;
+  width: 100%;
+  height: 85vh;
+  overflow: auto;
+}
+.editor_object {
+  position: absolute;
+  background: white;
+  padding: 30px;
+  width: 60%;
+  right: 20%;
+  min-height: 95vh;
+  border: 0.02px solid #ddd;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+
+.editor_container > * > * + * {
+  margin-top: 1em;
+}
+
+.toolbarButton {
+  color: #aaa;
+  cursor: pointer;
+  border: none;
+  background: none;
+  border: 0;
+  font: inherit;
+  line-height: normal;
+  overflow: visible;
+  padding: 0px;
+  text-align: center;
+  margin-top: 12px;
+  margin-bottom: 10px;
+  min-width: 20px;
+  height: 10px;
+  display: inline-block;
+}
+
+.toolbarButton:disabled {
+  color: #ccc;
+}
+
+.toolbarButton[data-active="true"] {
+  color: #e9456b;
+}
+
+.toolbar-menu {
+  padding: 0px 18px 12px;
+  margin: auto;
+  border-bottom: 0.5px solid #aaa;
+  background: white;
+}
+
+.toolbar-menu__left > *,
+.toolbar-menu__right > * {
+  display: inline-block;
+}
+
+.toolbar-menu__left > * + *,
+.toolbar-menu__right > * + * {
+  margin-left: 8px;
+}
+
+.toolbar-menu__right {
+  float: right;
+  margin-right: 25px;
+}
+
+.toolbar-menu i {
+  width: 10px;
+}
+
+.toolbar-menu .search {
+  position: relative;
+}
+
+.toolbar-menu .menu_color,
+.toolbar-menu .menu_character,
+.toolbar-menu .menu_rule,
+.toolbar-menu .menu_tables,
+.toolbar-menu .menu_patterns {
+  position: absolute;
+  display: flex;
+  border: 1px solid #aaa;
+  padding: 5px;
+  z-index: 98;
+  align-items: center;
+  background: white;
+  border-radius: 10px;
+}
+
+.toolbar-menu .menu_color {
+  left: 330px;
+  width: 52px;
+}
+
+.toolbar-menu .menu_character {
+  left: 360px;
+  padding-top: 0px;
+  padding-left: 0px;
+}
+
+.toolbar-menu .menu_rule {
+  left: 390px;
+  width: 8vw;
+  height: 19vh;
+  padding-top: 0px;
+}
+
+.toolbar-menu .menu_tables {
+  left: 415px;
+  min-height: 5vw;
+}
+
+.toolbar-menu .menu_patterns {
+  left: 445px;
+}
+
+.toolbar-menu .menu_rule span {
+  height: 1.5vw;
+  display: block;
+  text-align: left;
+  font-size: 0.8vw;
+}
+
+.toolbar-menu .menu_character span {
+  min-width: 2vw;
+  margin: auto;
+  font-size: 1.5vw;
+}
+
+.toolbar-menu .menu_tables span,
+.toolbar-menu .menu_patterns span {
+  display: block;
+  text-align: left;
+  padding-top: 0.1vh;
+  font-size: 0.8vw;
+  min-width: 10vw;
+  min-height: 2vh;
+  padding-bottom: 1vh;
+}
+
+.toolbar-menu .menu_color .menu,
+.toolbar-menu .menu_character .menu,
+.toolbar-menu .menu_rule .menu,
+.toolbar-menu .menu_tables .menu {
+  padding: 5px;
+}
+
+.check-list-item + .check-list-item {
+  margin-top: 0;
+}
+
+.check-list-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.check-list-item.checked {
+  opacity: 0.666;
+  text-decoration: line-through;
+}
+
+.check-list-item > span:first-child {
+  margin-right: 0.75em;
+}
+
+.check-list-item > span:last-child {
+  flex: 1;
+}
+
+.check-list-item > span:last-child:focus {
+  outline: none;
+}
+.underbar {
+  display: inline-block;
+  border-bottom: 1px solid grey;
+  width: 3em;
+  padding: 3px;
+  margin-left: 3px;
+  margin-right: 3px;
+  line-height: 14px;
+  height: 14px;
+}
+.underbar_l {
+  display: inline-block;
+  border-bottom: 1px solid grey;
+  width: 5em;
+  margin-left: 3px;
+  margin-right: 3px;
+  line-height: 14px;
+  height: 14px;
+}
+.underbar_xl {
+  display: inline-block;
+  border-bottom: 1px solid grey;
+  width: 8em;
+  margin-left: 3px;
+  margin-right: 3px;
+  line-height: 14px;
+  height: 14px;
+}
+
+.color_black {
+  color: #000 !important;
+}
+.color_grey {
+  color: #ccc !important;
+}
+.color_darkgrey {
+  color: #555 !important;
+}
+
+.color_red {
+  color: #fd4242 !important;
+}
+.color_yellow {
+  color: #feda32 !important;
+}
+.color_blue {
+  color: #25cced !important;
+}
+
+.color_male {
+  color: #25cced !important;
+}
+.color_female {
+  color: #fd426e !important;
+}
+.color_neuter {
+  color: #b3b3b3 !important;
+}
+
+.color_dative {
+  color: #00e6c2 !important;
+}
+.color_accusative {
+  color: #baa2ee !important;
+}
+
+.table_active,
+.table_active tr,
+.table_active th,
+.table_active td {
+  border-color: #444;
+}
+
+.table_arrow {
+  min-width: 300px;
+}
+
+.table_arrow tr td {
+  min-width: 100px;
+}
+
+.table_arrow tr td:nth-child(2) {
+  width: 16px;
+  min-width: 16px;
+}
+
+.table_conversation {
+  min-width: 300px;
+}
+
+.table_conversation tr td {
+  border: none;
+}
+
+.table_conversation tr:nth-child(even) td:first-child > span {
+  background: cyan;
+}
+
+.table_conversation tr td:first-child {
+  width: 30px;
+}
+
+.table_conversation tr td:first-child > span {
+  display: block;
+  text-indent: -9999px;
+  background: grey;
+  border-radius: 30px;
+  width: 30px;
+  height: 30px;
+}
+
+.table_middle {
+  min-width: 300px;
+}
+
+.table_middle tr td {
+  min-width: 100px;
+}
+
+.separator {
+  width: 3px;
+  color: #eee;
+  margin-left: 1vw;
+  margin-right: 0.5vw;
+}
+.separator:after {
+  content: "•";
+}
+
+.tips {
+  font-style: italic;
+}
+
+.mark_bold {
+  font-weight: bold;
+}
+
+.mark_italic {
+  font-style: italic;
+}
+
+.mark_underline {
+  text-decoration: underline;
+}
+
+.mark_strikethrough {
+  text-decoration: line-through;
+}
+
+.align_left {
+  text-align: left;
+}
+
+.align_center {
+  text-align: center;
+}
+
+.align_right {
+  text-align: right;
+}
+
+.pattern__text_item {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.pattern__translation_item {
+  font-size: 14px;
+  color: #888;
+}
+
+.pattern__center_block {
+  padding: 20px;
+  background: #ccc;
+  text-align: center;
+}
+
+.pattern__watchout_block {
+  padding: 20px;
+  background: rgba(254, 247, 205, 1);
+}
+
+.pattern__cultural_block {
+  padding: 20px;
+  background: rgba(226, 247, 252, 1);
+}
+
+.pattern__note_block {
+  padding: 20px;
+  background: rgba(249, 249, 249, 1);
+}
+
+.pattern__conversation_block {
+  padding: 20px;
+  background: #e3e;
+}
+
+.pattern__examples_block {
+  padding: 20px;
+  background: #eee;
+  text-align: center;
+}
+
+/* Just a plain list item can be a student item! */
+.pattern__conversation_block .pattern__normal_item,
+.pattern__conversation_block .pattern__student_item {
+  padding: 10px;
+  background-color: cyan;
+  text-align: left;
+}
+
+.pattern__tutor_item {
+  padding: 10px;
+  background-color: lightgreen;
+  text-align: right;
+}
+
+.heading-one {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.heading-two {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.pattern__center_block .heading-one,
+.pattern__watchout_block .heading-one,
+.pattern__cultural_block .heading-one,
+.pattern__note_block .heading-one {
+  font-size: 24px;
+  font-style: italic;
+}
+
+.pattern__center_block .heading-two,
+.pattern__watchout_block .heading-two,
+.pattern__cultural_block .heading-two,
+.pattern__note_block .heading-two {
+  font-size: 18px;
+  font-style: normal;
+}
